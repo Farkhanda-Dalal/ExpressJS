@@ -1,0 +1,3 @@
+Hello, We are learing about callbacks.
+Callback is a func passed as a parameter to another func
+They are usually used to defer their execution until an asyncronous task is completed.
