@@ -1,0 +1,156 @@
+{
+	"info": {
+		"_postman_id": "c019edde-5301-49ba-a921-d63b2aa546ed",
+		"name": "BookStoreRestAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33369921",
+		"_collection_link": "https://lunar-water-787322.postman.co/workspace/Postman-API-Fundamentals-Studen~671f49a4-cf37-4a96-bd35-b26a8f96269b/collection/33369921-c019edde-5301-49ba-a921-d63b2aa546ed?action=share&source=collection_link&creator=33369921"
+	},
+	"item": [
+		{
+			"name": "indexRoute",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all books",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{booksURL}}",
+					"host": [
+						"{{booksURL}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get book by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{booksURL}}/:id",
+					"host": [
+						"{{booksURL}}"
+					],
+					"path": [
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "68c192d3b705f4b6921380b3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add new book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "//Valid Input\r\n// {\r\n//     \"title\": \"The Fault in our Stars\",\r\n//     \"author\": \"John Green\",\r\n//     \"publishedYear\": 2010,\r\n//     \"pages\": 500,\r\n//     \"genre\": \"Fiction\",\r\n//     \"price\": 499,\r\n//     \"inStock\": true\r\n// }\r\n{\r\n    \"title\": \"Turtles all the way down\",\r\n    \"author\": \"John Green\",\r\n    \"publishedYear\": 2015,\r\n    \"pages\": 600,\r\n    \"genre\": \"Fiction\",\r\n    \"price\": 550,\r\n    \"inStock\": true\r\n}\r\n// {\r\n//     \"title\": \"Verity\",\r\n//     \"author\": \"Coleen Hoover\",\r\n//     \"publishedYear\": 2020,\r\n//     \"pages\": 400,\r\n//     \"genre\": \"Fiction\",\r\n//     \"price\": 599,\r\n//     \"inStock\": true\r\n// }\r\n// {\r\n//     \"title\": \"Turtles all the way down\",\r\n//     \"author\": \"John Green\",\r\n//     \"publishedYear\": 2015,\r\n//     \"pages\": 600,\r\n//     \"genre\": \"Fiction\",\r\n//     \"price\": 550,\r\n//     \"inStock\": true\r\n// }\r\n\r\n//Missing title\r\n// {\r\n//     \"author\": \"John Green\",\r\n//     \"publishedYear\": 2010,\r\n//     \"pages\": 500,\r\n//     \"genre\": \"Fiction\",\r\n//     \"price\": 499,\r\n//     \"inStock\": true\r\n\r\n// }\r\n\r\n//Missing author\r\n// {\r\n//     \"title\": \"The Fault in our Stars\",\r\n//     \"publishedYear\": 2010,\r\n//     \"pages\": 500,\r\n//     \"genre\": \"Fiction\",\r\n//     \"price\": 499,\r\n//     \"inStock\": true\r\n\r\n// }\r\n\r\n//Invalid Year\r\n// {\r\n//     \"title\": \"The Fault in our Stars\",\r\n//     \"author\": \"John Green\",\r\n//     \"publishedYear\": 2040,\r\n//     \"pages\": 500,\r\n//     \"genre\": \"Fiction\",\r\n//     \"price\": 499,\r\n//     \"inStock\": true\r\n\r\n// }\r\n\r\n//Invalid genre\r\n// {\r\n//     \"title\": \"The Fault in our Stars\",\r\n//     \"author\": \"John Green\",\r\n//     \"publishedYear\": 2010,\r\n//     \"pages\": 500,\r\n//     \"genre\": \"Teen Romance\",\r\n//     \"price\": 499,\r\n//     \"inStock\": true\r\n\r\n// }\r\n\r\n//Valid but with missing genre, sets genre to Other\r\n// {\r\n//     \"title\": \"The Fault in our Stars\",\r\n//     \"author\": \"John Green\",\r\n//     \"publishedYear\": 2010,\r\n//     \"pages\": 500,\r\n//     \"genre\": \"Fiction\",\r\n//     \"price\": 499,\r\n//     \"inStock\": true\r\n\r\n// }\r\n\r\n// Valid but with Missing inStock, sets inStock to true\r\n// {\r\n//     \"title\": \"The Fault in our Stars\",\r\n//     \"author\": \"John Green\",\r\n//     \"publishedYear\": 2010,\r\n//     \"pages\": 500,\r\n//     \"genre\": \"Fiction\",\r\n//     \"price\": 499\r\n// }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{booksURL}}",
+					"host": [
+						"{{booksURL}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update a book's details",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Verity\",\r\n    \"author\": \"Colleen Hoover\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/update/:id",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"update",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete a book",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{booksURL}}/:id",
+					"host": [
+						"{{booksURL}}"
+					],
+					"path": [
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "68c1a3fac4cd7f3a92e5e51a"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "localhost:3000",
+			"type": "default"
+		},
+		{
+			"key": "booksURL",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
